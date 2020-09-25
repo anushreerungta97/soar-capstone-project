@@ -1,0 +1,25 @@
+<h1 style="text-align: center; color: brown;">Login Page</h1>>
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col md-6 text-left bg-white rounded shadow py-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="form-group">
+                    <label for="EmailAddress">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email address" autoComplete="off" formControlName='email'>
+                    <small class="text-danger" *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Please enter valid email address</small>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="Password" placeholder="Enter password" autoComplete="off" formControlName='password'>
+                    <small class="text-danger" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Password you entered is incorrect.
+                    </small>
+                </div>
+                <button type="login" class="btn btn-success">Login</button>
+                <p>{{message}}</p>
+            </form>
+        </div>
+    </div>
+</div>

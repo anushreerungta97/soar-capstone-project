@@ -1,0 +1,15 @@
+<h1 style="text-align: center; color: brown">Inventory Maintenance Page </h1>
+
+<button class="btn btn-outline-success pull right">No. of items</button>
+<br>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of products">
+            <app-maintenance-products name="{{product.name}}" type="{{product.type}}" price="{{product.price}}" 
+           imgUrl="{{product.imgUrl}}"> </app-maintenance-products>
+           <br>
+           <br>
+        </div>
+    </div>
+</div>

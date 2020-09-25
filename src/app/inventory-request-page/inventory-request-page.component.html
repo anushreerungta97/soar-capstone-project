@@ -1,0 +1,20 @@
+<header>
+    <h1 style="text-align: center; color: brown">Inventory Request Page</h1>
+    <button class="btn btn-outline-success pull-right">My cart</button>
+</header>
+
+<!-- <a routerLink="/cart" class="button fancy-button">
+    <i class="material-icons">shopping_cart</i>Checkout
+</a> -->
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of products">
+            <app-products name="{{product.name}}" type="{{product.type}}" price="{{product.price}}" 
+            available="{{product.available}}" imgUrl="{{product.imgUrl}}"> </app-products>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,47 @@
+<h1 style="text-align:center; color:brown">Employee Profile Management Page</h1>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col md-6 text-left bg-white rounded shadow py-3">
+      <form action='' [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+        <!-- <div class="form-group">
+          <label for="EmployeeId">Employee Id</label>
+          <input type="text" class="form-control" id="employee Id" placeholder="Enter employee id" autoComplete="off" formControlName='employeeId'>
+          <small class="text-danger" *ngIf="!registrationForm.get('employeeId').valid && registrationForm.get('employeeId').touched">Please enter unique id</small>
+        </div> -->
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" autoComplete="off" formControlName='name' >
+          <small class="text-danger" *ngIf="!registrationForm.get('name').valid && registrationForm.get('name').touched">Please enter valid name</small>
+        </div>
+        <div class="form-group">
+          <label for="EmailAddress">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email address" autoComplete="off" formControlName='email'>
+          <small class="text-danger" *ngIf="!registrationForm.get('email').valid && registrationForm.get('email').touched">Please enter valid email address</small>
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Enter password" autoComplete="off" formControlName='password'>
+          <small class="text-danger" *ngIf="!registrationForm.get('password').valid && registrationForm.get('password').touched">Please enter valid password.The passwrod must
+            be greater tha 8 chracters which is combination of alphabets, special characters and numbers.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="typeOfEmployee">Select type of employee</label>
+          <select class="form-control" id="type of employee" formControlName='typeOfEmployee'>
+            <option>Infrastructure admin</option>
+            <option>Manager</option>
+            <option>Software developer</option>
+            <option>Employee Admin</option>
+          </select>
+          <small class="text-danger" *ngIf="!registrationForm.get('typeOfEmployee').valid && registrationForm.get('typeOfEmployee').touched">Please select employee type</small>
+        </div>
+        <button type="register" class="btn btn-success" (click)="onRegister()">Register</button>
+        <p>Already registered?<a routerLink="/login">Click here.</a></p>
+        <p>{{message}}</p>
+      </form>
+    </div>
+  </div>
+</div>
